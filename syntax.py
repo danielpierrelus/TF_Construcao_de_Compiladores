@@ -141,14 +141,14 @@ while True:
         if not acao:  # Se não houver ação, ocorreu um erro de sintaxe
             sys.exit('erro (sintaxe inválida) linha {} token {}'.format(fita[0][0], fita[0][2]))
         elif acao[0] == 's':  # Se a ação começa com 's', empilhe o terminal e o estado
-            pilha.append(fita[0][1])
-            fita.pop(0)
-            pilha.append(acao[1:])
+            pilha.append(fita[0][1]) #representa o empilhamento 
+            fita.pop(0) # Essa instrução remove e retorna o primeiro elemento da lista fita
+            pilha.append(acao[1:]) #representa o empilhamento 
         elif acao[0] == 'r':  # Se a ação começa com 'r', aplique a regra de redução
             temp = prod[int(acao[1:])].split()  # Obtém a produção correspondente na lista 'prod'
-            for i in range((len(temp) - 2) * 2):  # Desempilha os símbolos necessários
-                pilha.pop()
-            pilha.append(temp[0])  # Empilha o não terminal resultante da redução
+            for i in range((len(temp) - 2) * 2):  #determina o tamanho da produção e quantos símbolos devem ser desempilhados durante a aplicação da regra de redução.
+                pilha.pop() # permite desempilhar um símbolo do topo da pilha de estados.
+            pilha.append(temp[0]) #adiciona um novo elemento no topo da pilha
         else:
             break  # Se a ação não corresponder a 's' ou 'r', interrompe o loop
     else:

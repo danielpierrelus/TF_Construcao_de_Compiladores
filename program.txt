@@ -1,2 +1,2 @@
-< if ( ( 8 < bola ) ) { gato = ( ( aviao * 7 ) + 3738 ) } >
+ if 1 < ) ( ( 8 < bola ) ) { gato = ( ( aviao * 7 ) + 3738 ) } >
 a = ( 777 + 4 )
